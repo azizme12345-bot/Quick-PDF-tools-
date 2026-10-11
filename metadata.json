@@ -1,0 +1,6 @@
+{
+  "name": "Quick PDF Tools",
+  "description": "Free online PDF tools to convert images to PDF, turn PDF pages into JPGs, merge, split, rotate, extract and organize PDF pages right in your browser.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
