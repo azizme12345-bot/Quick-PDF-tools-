@@ -11,10 +11,10 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Quick PDF Tools — Free PDF Utilities">
 <meta property="og:description" content="Convert, merge, split and manage PDFs with simple browser-based tools.">
-<meta property="og:url" content="https://quickpdftools.example/">
+<meta property="og:url" content="https://quickpdftools.com/">
 <meta property="og:site_name" content="Quick PDF Tools">
 <meta name="twitter:card" content="summary">
-<link rel="canonical" href="https://quickpdftools.example/">
+<link rel="canonical" href="https://quickpdftools.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Quick PDF Tools","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Browser-based PDF and image conversion utilities.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <style>
 :root {
@@ -579,7 +579,7 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
             <div class="drop" id="dropZone">
               <div class="cloud">☁</div>
               <strong id="dropTitle">Drag & drop your images here</strong>
-              <small id="dropSub">JPG, PNG, or WEBP · You can select multiple images (10+ supported)</small>
+              <small id="dropSub">JPG, PNG, or WEBP · You can select multiple images</small>
               <div class="drop-actions">
                 <button class="primary" id="chooseBtn">Choose Files</button>
                 <button class="secondary" id="clearBtn">Clear Files</button>
@@ -624,7 +624,7 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
               <div class="preview-grid" id="previewGrid"></div>
             </div>
             
-            <p class="notice" id="workspaceNotice">Your files stay in this browser for supported tools. Select 1, 5, 10 or more images to combine them into a single multi-page PDF document.</p>
+            <p class="notice" id="workspaceNotice">Your files stay in this browser for supported tools. Some advanced tools might require external processing.</p>
           </div>
         </div>
       </div>
@@ -757,15 +757,13 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
 <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
-// Automatically set dynamic canonical and og:url if hosted
+// Automatically set dynamic canonical and og:url
 try {
-  const origin = window.location.origin;
-  if (origin && !origin.includes('localhost') && !origin.includes('127.0.0.1')) {
-    const canonicalEl = document.querySelector('link[rel="canonical"]');
-    if (canonicalEl) canonicalEl.href = origin + '/';
-    const ogUrlEl = document.querySelector('meta[property="og:url"]');
-    if (ogUrlEl) ogUrlEl.content = origin + '/';
-  }
+  const origin = 'https://quickpdftools.com'; 
+  const canonicalEl = document.querySelector('link[rel="canonical"]');
+  if (canonicalEl) canonicalEl.href = origin + '/';
+  const ogUrlEl = document.querySelector('meta[property="og:url"]');
+  if (ogUrlEl) ogUrlEl.content = origin + '/';
 } catch (e) {}
 
 if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
