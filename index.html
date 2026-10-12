@@ -4,19 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="e2RrqWDlKxHOPt0hT0SbW2dvhjsUgITfsuQwy6ZZhjY" />
-<meta name="theme-color" content="#ffffff">
-<title>Quick PDF Tools — Free PDF Converter, Merger & Image Tools</title>
-<meta name="description" content="Use free online PDF tools to convert images to PDF, turn PDF pages into JPGs, merge, split, rotate, extract and organize PDF pages. Files are processed securely in your browser.">
+<meta name="theme-color" content="#1769ff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="QuickPDF">
+<title>Quick PDF Tools — Free Online PDF Converter, Merger & Image Tools</title>
+<meta name="description" content="Convert JPG to PDF, turn PDF pages into images, merge, split, compress, rotate, and watermark PDFs online for free. Fast, private, browser-based PDF tools.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="Quick PDF Tools">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Quick PDF Tools — Free PDF Utilities">
-<meta property="og:description" content="Convert, merge, split and manage PDFs with simple browser-based tools.">
-<meta property="og:url" content="https://quick-pdf-tools-2zxk.vercel.app/">
-<meta property="og:site_name" content="Quick PDF Tools">
-<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="https://quick-pdf-tools-2zxk.vercel.app/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Quick PDF Tools","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Browser-based PDF and image conversion utilities.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quick PDF Tools">
+<meta property="og:title" content="Quick PDF Tools — Free Online PDF Converter, Merger & Image Tools">
+<meta property="og:description" content="Convert images to PDF, PDF to JPG, merge, split, compress, rotate, and watermark PDF files right in your browser — fast, free, and secure.">
+<meta property="og:url" content="https://quick-pdf-tools-2zxk.vercel.app/">
+<meta property="og:image" content="https://quick-pdf-tools-2zxk.vercel.app/og-image.png">
+<meta property="og:image:secure_url" content="https://quick-pdf-tools-2zxk.vercel.app/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Quick PDF Tools — All Your PDF Tools in One Place">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quick PDF Tools — Free Online PDF Converter, Merger & Image Tools">
+<meta name="twitter:description" content="Convert images to PDF, PDF to JPG, merge, split, compress, rotate, and watermark PDF files right in your browser.">
+<meta name="twitter:image" content="https://quick-pdf-tools-2zxk.vercel.app/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Quick PDF Tools","url":"https://quick-pdf-tools-2zxk.vercel.app/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Convert JPG to PDF, turn PDF pages into images, merge, split, compress, rotate, and watermark PDFs online for free in your browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <style>
 :root {
   --blue: #1769ff;
@@ -1229,6 +1246,12 @@ function addHistoryRecord(toolName, fileName) {
   });
   if (history.length > 50) history = history.slice(0, 50);
   localStorage.setItem('qpt_history', JSON.stringify(history));
+}
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
 }
 </script>
 </body>
