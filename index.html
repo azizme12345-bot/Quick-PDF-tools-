@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="e2RrqWDlKxHOPt0hT0SbW2dvhjsUgITfsuQwy6ZZhjY" />
+<meta name="google-site-verification" content="qi0UgpFOJYaMDvHRl3E5mGMMXtq34YhFTe2mpXxakzQ" />
 <meta name="theme-color" content="#1769ff">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -775,13 +776,11 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
 <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
-// Automatically set dynamic canonical and og:url
 try {
-  const origin = 'https://quick-pdf-tools-2zxk.vercel.app'; 
   const canonicalEl = document.querySelector('link[rel="canonical"]');
-  if (canonicalEl) canonicalEl.href = origin + '/';
+  if (canonicalEl && window.location.origin) canonicalEl.href = window.location.href;
   const ogUrlEl = document.querySelector('meta[property="og:url"]');
-  if (ogUrlEl) ogUrlEl.content = origin + '/';
+  if (ogUrlEl && window.location.origin) ogUrlEl.content = window.location.href;
 } catch (e) {}
 
 if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
