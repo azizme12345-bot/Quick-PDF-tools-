@@ -778,9 +778,9 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
 <script>
 try {
   const canonicalEl = document.querySelector('link[rel="canonical"]');
-  if (canonicalEl && window.location.origin) canonicalEl.href = window.location.href;
+  if (canonicalEl) canonicalEl.href = 'https://quick-pdf-tools-2zxk.vercel.app/';
   const ogUrlEl = document.querySelector('meta[property="og:url"]');
-  if (ogUrlEl && window.location.origin) ogUrlEl.content = window.location.href;
+  if (ogUrlEl) ogUrlEl.content = 'https://quick-pdf-tools-2zxk.vercel.app/';
 } catch (e) {}
 
 if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
