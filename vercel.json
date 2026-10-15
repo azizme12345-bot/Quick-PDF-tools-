@@ -1,5 +1,11 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/((?!sitemap\\.xml|robots\\.txt|favicon\\.svg|favicon\\.png|apple-touch-icon\\.png|manifest\\.json|og-image\\.png|pwa-.*\\.png|sw\\.js).*)",
+      "destination": "/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/sitemap.xml",
