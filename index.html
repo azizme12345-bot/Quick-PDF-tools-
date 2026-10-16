@@ -738,16 +738,16 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
       </div>
       <div class="footer-col">
         <strong>Legal</strong>
-        <a href="#privacy">Privacy Policy</a>
-        <a href="#terms">Terms of Service</a>
-        <a href="#disclaimer">Disclaimer</a>
-        <a href="#sitemap">Sitemap</a>
+        <a href="#privacy" onclick="openPrivacy(event)">Privacy Policy</a>
+        <a href="#terms" onclick="openTerms(event)">Terms of Service</a>
+        <a href="#disclaimer" onclick="openDisclaimer(event)">Disclaimer</a>
+        <a href="/sitemap.xml" target="_blank" rel="noopener">Sitemap</a>
       </div>
       <div class="footer-col">
         <strong>Help & Support</strong>
         <a href="#contact">Contact Us</a>
         <a href="#faq">FAQs</a>
-        <a href="#feedback">Send Feedback</a>
+        <a href="#feedback" onclick="toast('For feedback or inquiries, contact azizme12345@gmail.com')">Send Feedback</a>
       </div>
     </div>
     <div class="copyright">
@@ -758,6 +758,65 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
 </footer>
 
 <div class="toast" id="toast" role="status"></div>
+
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); z-index:200; backdrop-filter:blur(4px); place-items:center; padding:16px;">
+  <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; width:100%; max-width:640px; max-height:85vh; overflow-y:auto; box-shadow:var(--shadow-lg); padding:24px; color:var(--ink);">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid var(--line); padding-bottom:12px;">
+      <h3 style="margin:0; font-size:18px; font-weight:800;">Privacy Policy</h3>
+      <button class="icon-btn" style="width:32px; height:32px; font-size:14px;" onclick="closePrivacy()">×</button>
+    </div>
+    <div style="font-size:13px; line-height:1.7; color:var(--muted); display:grid; gap:14px;">
+      <p><strong style="color:var(--ink);">1. In-Browser Local Processing</strong><br>
+      All active tools on Quick PDF Tools (including JPG to PDF, PDF to JPG, Merge, Compress, Split, Rotate, Delete, Extract, Watermark, and Page Numbers) run locally on your device within your web browser using client-side JavaScript libraries (PDF-Lib and PDF.js). Your files are not uploaded to our servers or any remote cloud storage.</p>
+
+      <p><strong style="color:var(--ink);">2. File Handling & Memory</strong><br>
+      Documents and images remain in your browser's temporary runtime memory while processing. Object URLs and temporary references are released when you clear, reset, or close your session. No guarantee of forensic physical memory erasure is made.</p>
+
+      <p><strong style="color:var(--ink);">3. Conversion History</strong><br>
+      If you choose to use the Conversion History feature, summary records (tool used, file name, and timestamp) are stored locally in your browser's <code>localStorage</code>. No file contents are stored. You can clear this history at any time using the "Clear All History" button.</p>
+
+      <p><strong style="color:var(--ink);">4. Third-Party CDNs</strong><br>
+      The website loads standard open-source library scripts (e.g., PDF-Lib and PDF.js) from public content delivery networks (CDNs). No document content, filenames, or user data are transmitted to these providers.</p>
+
+      <p><strong style="color:var(--ink);">5. Advanced Conversion Notice</strong><br>
+      Certain advanced document formats (such as editable Word, Excel, or PowerPoint conversions and OCR) require dedicated server infrastructure. These are marked as requiring external engines and are not processed silently.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Terms of Service Modal -->
+<div id="termsModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); z-index:200; backdrop-filter:blur(4px); place-items:center; padding:16px;">
+  <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; width:100%; max-width:600px; max-height:85vh; overflow-y:auto; box-shadow:var(--shadow-lg); padding:24px; color:var(--ink);">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid var(--line); padding-bottom:12px;">
+      <h3 style="margin:0; font-size:18px; font-weight:800;">Terms of Service</h3>
+      <button class="icon-btn" style="width:32px; height:32px; font-size:14px;" onclick="closeTerms()">×</button>
+    </div>
+    <div style="font-size:13px; line-height:1.7; color:var(--muted); display:grid; gap:14px;">
+      <p><strong style="color:var(--ink);">1. Use of Service</strong><br>
+      Quick PDF Tools is provided free of charge for personal and professional document management. You are responsible for ensuring that you have the right to process any documents or images you use with this service.</p>
+
+      <p><strong style="color:var(--ink);">2. Intellectual Property</strong><br>
+      You retain all copyright, ownership, and rights to the documents and files you process. We claim no ownership over your content.</p>
+
+      <p><strong style="color:var(--ink);">3. Limitation of Liability</strong><br>
+      This software is provided "as is", without warranty of any kind. Users are advised to retain backup copies of important documents prior to processing.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Disclaimer Modal -->
+<div id="disclaimerModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); z-index:200; backdrop-filter:blur(4px); place-items:center; padding:16px;">
+  <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; width:100%; max-width:600px; max-height:85vh; overflow-y:auto; box-shadow:var(--shadow-lg); padding:24px; color:var(--ink);">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid var(--line); padding-bottom:12px;">
+      <h3 style="margin:0; font-size:18px; font-weight:800;">Disclaimer</h3>
+      <button class="icon-btn" style="width:32px; height:32px; font-size:14px;" onclick="closeDisclaimer()">×</button>
+    </div>
+    <div style="font-size:13px; line-height:1.7; color:var(--muted); display:grid; gap:14px;">
+      <p>Quick PDF Tools is an independent browser-based utility. We are not affiliated with, endorsed by, or sponsored by Adobe Systems Incorporated or other trademark holders. All trademarks referenced belong to their respective owners.</p>
+    </div>
+  </div>
+</div>
 
 <!-- History Modal -->
 <div id="historyModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); z-index:200; backdrop-filter:blur(4px); place-items:center; padding:16px;">
@@ -808,7 +867,33 @@ const toolData=[
   {name:'PowerPoint to PDF',desc:'Convert slides to PDF',icon:'P',color:'orange',key:'pptpdf'}
 ];
 
-function card(t){return `<article class="tool-card" tabindex="0" role="button" onclick="toolCardClick('${t.key||''}','${t.name.replace(/'/g,"\\'")}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toolCardClick('${t.key||''}','${t.name.replace(/'/g,"\\'")}')}"><div class="tool-icon ${t.color}">${t.icon}</div><h3>${t.name}</h3><p>${t.desc}</p></article>`}
+const toolToPath={
+  jpgpdf:'/image-to-pdf',
+  pdfjpg:'/pdf-to-jpg',
+  merge:'/merge-pdf',
+  split:'/split-pdf',
+  rotate:'/rotate-pdf',
+  compress:'/compress-pdf',
+  extract:'/extract-pages',
+  organize:'/organize-pdf',
+  watermark:'/add-watermark'
+};
+const pathToTool={
+  '/image-to-pdf':'jpgpdf',
+  '/pdf-to-jpg':'pdfjpg',
+  '/merge-pdf':'merge',
+  '/split-pdf':'split',
+  '/rotate-pdf':'rotate',
+  '/compress-pdf':'compress',
+  '/extract-pages':'extract',
+  '/organize-pdf':'organize',
+  '/add-watermark':'watermark'
+};
+
+function card(t){
+  const href = toolToPath[t.key] || '#workspace';
+  return `<a href="${href}" class="tool-card" onclick="toolCardClick(event, '${t.key||''}','${t.name.replace(/'/g,"\\'")}')"><div class="tool-icon ${t.color}">${t.icon}</div><h3>${t.name}</h3><p>${t.desc}</p></a>`;
+}
 document.getElementById('popularGrid').innerHTML=toolData.slice(0,10).map(card).join('');
 
 function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove('show'),3200)}
@@ -821,7 +906,12 @@ if(localStorage.getItem('qpt-dark')==='1'){document.body.classList.add('dark');d
 document.getElementById('menuBtn').onclick=()=>document.getElementById('nav').classList.toggle('open');
 
 const $=id=>document.getElementById(id);
-let activeTool='jpgpdf', selectedFiles=[], outputFiles=[], outputUrls=[];
+let activeTool='jpgpdf', selectedFiles=[], outputFiles=[], outputUrls=[], thumbUrls=[];
+
+function revokeThumbUrls(){
+  thumbUrls.forEach(u=>URL.revokeObjectURL(u));
+  thumbUrls=[];
+}
 
 const toolConfig={
   jpgpdf:{title:'JPG to PDF',desc:'Convert 10, 20 or more images into a single multi-page PDF document.',icon:'▧',accept:'image/jpeg,image/png,image/webp',multiple:true,drop:'Drag & drop your images here',sub:'JPG, PNG, or WEBP · Select multiple images at once',button:'Convert to PDF →'},
@@ -845,7 +935,19 @@ const toolConfig={
   excelpdf:{title:'Excel to PDF',desc:'Spreadsheet formatting requires a spreadsheet rendering engine.',icon:'X',accept:'.xls,.xlsx',multiple:false,drop:'Choose an Excel file',sub:'XLS or XLSX files',button:'Convert to PDF →'},
   pptpdf:{title:'PowerPoint to PDF',desc:'Presentation rendering requires a slide conversion service.',icon:'P',accept:'.ppt,.pptx',multiple:false,drop:'Choose a presentation',sub:'PPT or PPTX files',button:'Convert to PDF →'}
 };
-function selectTool(key){
+
+function updateMetaForTool(key){
+  const c = toolConfig[key];
+  if(!c) return;
+  document.title = `${c.title} — Quick PDF Tools`;
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if(metaDesc) metaDesc.content = c.desc;
+  const canonical = document.querySelector('link[rel="canonical"]');
+  const path = toolToPath[key] || '';
+  if(canonical) canonical.href = 'https://quick-pdf-tools-2zxk.vercel.app' + path;
+}
+
+function selectTool(key, updateUrl = true, shouldScroll = true){
   if(!toolConfig[key])return;
   activeTool=key;
   const c=toolConfig[key];
@@ -867,32 +969,67 @@ function selectTool(key){
   clearOutputs();
   renderFiles();
   $('engineStatus').textContent='Ready to use';
-  $('workspace').scrollIntoView({behavior:'smooth',block:'start'})
+
+  if(updateUrl && toolToPath[key]){
+    try {
+      history.pushState({ tool: key }, '', toolToPath[key]);
+    } catch(e) {}
+  }
+  updateMetaForTool(key);
+
+  if(shouldScroll){
+    $('workspace').scrollIntoView({behavior:'smooth',block:'start'});
+  }
 }
 
-document.querySelectorAll('.tool-choice').forEach(b=>b.addEventListener('click',()=>selectTool(b.dataset.tool)));
-function toolCardClick(key,name){
+document.querySelectorAll('.tool-choice').forEach(b=>b.addEventListener('click',()=>selectTool(b.dataset.tool, true, false)));
+
+function toolCardClick(e, key, name){
+  if(e) e.preventDefault();
   if(key&&toolConfig[key]){
-    selectTool(key);
+    selectTool(key, true, true);
   } else {
     toast(name+' requires a dedicated conversion engine.');
   }
 }
 
+window.addEventListener('popstate', (e)=>{
+  const path = window.location.pathname.replace(/\/$/, '');
+  const key = (e.state && e.state.tool) || pathToTool[path] || 'jpgpdf';
+  if(toolConfig[key]){
+    selectTool(key, false, false);
+  }
+});
+
+// Route detection on initial load
+const initialPath = window.location.pathname.replace(/\/$/, '');
+if(pathToTool[initialPath]){
+  selectTool(pathToTool[initialPath], false, false);
+}
+
 $('chooseBtn').onclick=()=>$('fileInput').click();
 $('clearBtn').onclick=()=>{selectedFiles=[];$('fileInput').value='';renderFiles();clearOutputs()};
-$('resetBtn').onclick=()=>{selectedFiles=[];$('fileInput').value='';renderFiles();clearOutputs();$('progressWrap').style.display='none';$('progressBar').style.width='0%';$('engineStatus').textContent='Ready to use'};
+$('resetBtn').onclick=()=>{revokeThumbUrls();selectedFiles=[];$('fileInput').value='';renderFiles();clearOutputs();$('progressWrap').style.display='none';$('progressBar').style.width='0%';$('engineStatus').textContent='Ready to use'};
 $('fileInput').addEventListener('change',e=>addFiles([...e.target.files]));
 
 function addFiles(files){
   if(!files.length)return;
   const cfg=toolConfig[activeTool];
+  const MAX_SIZE = 100 * 1024 * 1024; // 100 MB max for in-browser memory
+  let skippedZero = 0;
+  let skippedSize = 0;
   let valid=files.filter(f=>{
+    if(f.size === 0){ skippedZero++; return false; }
+    if(f.size > MAX_SIZE){ skippedSize++; return false; }
     if(activeTool==='jpgpdf')return f.type.startsWith('image/')||/\.(jpe?g|png|webp)$/i.test(f.name);
     if(activeTool==='wordpdf'||activeTool==='excelpdf'||activeTool==='pptpdf')return true;
-    return f.type==='application/pdf'||f.name.toLowerCase().endsWith('.pdf')
+    return f.type==='application/pdf'||f.name.toLowerCase().endsWith('.pdf');
   });
-  if(valid.length!==files.length)toast('Some files were skipped due to type mismatch for this tool.');
+
+  if(skippedZero > 0) toast('Empty 0-byte file(s) cannot be processed.');
+  else if(skippedSize > 0) toast('File exceeds the 100MB browser limit.');
+  else if(valid.length!==files.length) toast('Some files were skipped due to type mismatch for this tool.');
+
   if(!cfg.multiple&&valid.length>1)valid=valid.slice(0,1);
   selectedFiles=[...selectedFiles,...valid];
   renderFiles();
@@ -901,18 +1038,23 @@ function addFiles(files){
 }
 
 function renderFiles(){
+  revokeThumbUrls();
   const countBanner = $('fileCountBanner');
   if(selectedFiles.length > 0) {
-    countBanner.textContent = `${selectedFiles.length} Image(s) Selected`;
+    countBanner.textContent = `${selectedFiles.length} File(s) Selected`;
   } else {
     countBanner.textContent = '';
   }
 
   $('fileList').innerHTML=selectedFiles.map((f,i)=>{
     const isImg = activeTool==='jpgpdf' && (f.type.startsWith('image/') || /\.(jpe?g|png|webp)$/i.test(f.name));
-    const thumbUrl = isImg ? URL.createObjectURL(f) : '';
+    let thumbUrl = '';
+    if(isImg){
+      thumbUrl = URL.createObjectURL(f);
+      thumbUrls.push(thumbUrl);
+    }
     return `<div class="file-row" style="align-items:center; gap:12px;">
-      ${isImg ? `<img src="${thumbUrl}" style="width:40px; height:40px; object-fit:cover; border-radius:8px; border:1px solid var(--line);" />` : `<span class="file-badge">${f.name.toLowerCase().endsWith('.pdf')?'PDF':(f.name.split('.').pop()||'FILE').toUpperCase()}</span>`}
+      ${isImg ? `<img src="${thumbUrl}" alt="preview" style="width:40px; height:40px; object-fit:cover; border-radius:8px; border:1px solid var(--line);" />` : `<span class="file-badge">${f.name.toLowerCase().endsWith('.pdf')?'PDF':(f.name.split('.').pop()||'FILE').toUpperCase()}</span>`}
       <div class="file-meta">
         <strong title="${escapeHtml(f.name)}">${escapeHtml(f.name)}</strong>
         <small>${formatSize(f.size)} ${isImg ? '· Page ' + (i + 1) : ''}</small>
@@ -941,7 +1083,7 @@ function moveFile(index, direction) {
 function removeFile(i){selectedFiles.splice(i,1);renderFiles();clearOutputs()}
 function formatSize(n){if(n<1024)return n+' B';if(n<1048576)return (n/1024).toFixed(1)+' KB';return (n/1048576).toFixed(2)+' MB'}
 function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function clearOutputs(){outputFiles=[];outputUrls.forEach(URL.revokeObjectURL);outputUrls=[];$('result').style.display='none';$('previewGrid').innerHTML=''}
+function clearOutputs(){revokeThumbUrls();outputFiles=[];outputUrls.forEach(URL.revokeObjectURL);outputUrls=[];$('result').style.display='none';$('previewGrid').innerHTML=''}
 
 const drop=$('dropZone');
 ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag')}));
@@ -1006,7 +1148,14 @@ function parsePages(text,total){
   }
   return [...set].sort((a,b)=>a-b);
 }
-async function loadPdf(file){ if(!window.PDFLib)throw new Error('PDF library failed to load.'); return PDFLib.PDFDocument.load(await file.arrayBuffer()); }
+async function loadPdf(file){ 
+  if(!window.PDFLib)throw new Error('PDF library failed to load.'); 
+  try {
+    return await PDFLib.PDFDocument.load(await file.arrayBuffer()); 
+  } catch(e) {
+    throw new Error('This PDF file is password-protected, damaged, or invalid. Please provide an unprotected PDF.');
+  }
+}
 async function savePdf(doc,name){
   const bytes=await doc.save();
   outputFiles=[{name,blob:new Blob([bytes],{type:'application/pdf'}),type:'pdf'}];
@@ -1041,7 +1190,12 @@ async function numberPdf(){
 }
 async function compressPdf(){
   if(!window.pdfjsLib)throw new Error('PDF rendering engine unavailable.');
-  const source=await pdfjsLib.getDocument({data:await selectedFiles[0].arrayBuffer()}).promise;
+  let source;
+  try {
+    source=await pdfjsLib.getDocument({data:await selectedFiles[0].arrayBuffer()}).promise;
+  } catch(e) {
+    throw new Error('This PDF file is password-protected or corrupted.');
+  }
   const out=await PDFLib.PDFDocument.create();
   for(let i=1;i<=source.numPages;i++){
     const page=await source.getPage(i),viewport=page.getViewport({scale:1.25});
@@ -1114,13 +1268,18 @@ async function mergePdfs(){
   const {PDFDocument}=PDFLib;
   const merged=await PDFDocument.create();
   for(let i=0;i<selectedFiles.length;i++){
-    const doc=await PDFDocument.load(await selectedFiles[i].arrayBuffer());
+    let doc;
+    try {
+      doc=await PDFDocument.load(await selectedFiles[i].arrayBuffer());
+    } catch(err) {
+      throw new Error(`File "${selectedFiles[i].name}" cannot be opened. It may be password-protected or damaged.`);
+    }
     const pages=await merged.copyPages(doc,doc.getPageIndices());
     pages.forEach(p=>merged.addPage(p));
-    setProgress(10+Math.round((i+1)/selectedFiles.length*75))
+    setProgress(10+Math.round((i+1)/selectedFiles.length*75));
   }
   const bytes=await merged.save();
-  outputFiles=[{name:'merged-document.pdf',blob:new Blob([bytes],{type:'application/pdf'}),type:'pdf'}]
+  outputFiles=[{name:'merged-document.pdf',blob:new Blob([bytes],{type:'application/pdf'}),type:'pdf'}];
 }
 
 function renderPreviews(){
@@ -1246,6 +1405,13 @@ function addHistoryRecord(toolName, fileName) {
   if (history.length > 50) history = history.slice(0, 50);
   localStorage.setItem('qpt_history', JSON.stringify(history));
 }
+
+function openPrivacy(e){if(e)e.preventDefault();$('privacyModal').style.display='grid';}
+function closePrivacy(){$('privacyModal').style.display='none';}
+function openTerms(e){if(e)e.preventDefault();$('termsModal').style.display='grid';}
+function closeTerms(){$('termsModal').style.display='none';}
+function openDisclaimer(e){if(e)e.preventDefault();$('disclaimerModal').style.display='grid';}
+function closeDisclaimer(){$('disclaimerModal').style.display='none';}
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
