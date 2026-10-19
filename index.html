@@ -672,11 +672,11 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
         </div>
       </div>
       <div class="categories">
-        <a class="category" href="#workspace" onclick="selectTool('pdfjpg')"><span class="tool-icon red">⇄</span><span><strong>Convert PDF</strong><small>File conversions</small></span></a>
-        <a class="category" href="#workspace" onclick="selectTool('merge')"><span class="tool-icon purple">▤</span><span><strong>Organize PDF</strong><small>Manage pages</small></span></a>
-        <a class="category" href="#workspace" onclick="toast('Security tools require specialized encryption modules.')"><span class="tool-icon green">♙</span><span><strong>PDF Security</strong><small>Protect your files</small></span></a>
-        <a class="category" href="#workspace" onclick="toast('PDF editing requires an interactive annotation engine.')"><span class="tool-icon blue">✎</span><span><strong>Edit PDF</strong><small>Make changes</small></span></a>
-        <a class="category" href="#workspace" onclick="selectTool('jpgpdf')"><span class="tool-icon cyan">▧</span><span><strong>Image Tools</strong><small>PDF and images</small></span></a>
+        <a class="category" href="/pdf-to-jpg" onclick="toolCardClick(event, 'pdfjpg', 'PDF to JPG')"><span class="tool-icon red">⇄</span><span><strong>Convert PDF</strong><small>File conversions</small></span></a>
+        <a class="category" href="/merge-pdf" onclick="toolCardClick(event, 'merge', 'Merge PDF')"><span class="tool-icon purple">▤</span><span><strong>Organize PDF</strong><small>Manage pages</small></span></a>
+        <a class="category" href="#" onclick="toast('Security tools require specialized encryption modules.')"><span class="tool-icon green">♙</span><span><strong>PDF Security</strong><small>Protect your files</small></span></a>
+        <a class="category" href="#" onclick="toast('PDF editing requires an interactive annotation engine.')"><span class="tool-icon blue">✎</span><span><strong>Edit PDF</strong><small>Make changes</small></span></a>
+        <a class="category" href="/image-to-pdf" onclick="toolCardClick(event, 'jpgpdf', 'JPG to PDF')"><span class="tool-icon cyan">▧</span><span><strong>Image Tools</strong><small>PDF and images</small></span></a>
       </div>
     </div>
   </section>
@@ -717,6 +717,59 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
         <details><summary>Can I select multiple images at once?</summary><p>Yes. JPG to PDF accepts 10, 20 or more image files and combines them into a single multi-page PDF in your chosen order with reordering support.</p></details>
         <details><summary>How does History work?</summary><p>Your completed actions are stored securely in your browser's local storage so you can easily review past conversions.</p></details>
         <details><summary>Are my files uploaded to a server?</summary><p>The supported browser-side conversions are performed locally on your device for maximum privacy and speed.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="eeat-guide">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>📖 Comprehensive Guide & E-E-A-T Insights</h2>
+          <p>Authoritative information on PDF security, tool benefits, and expert troubleshooting.</p>
+        </div>
+      </div>
+      
+      <div style="display:grid; gap:24px; color:var(--ink); font-size:14px; line-height:1.7;">
+        <!-- 1. Security Guide -->
+        <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:var(--shadow-sm);">
+          <h3 style="font-size:18px; font-weight:800; margin-bottom:12px; color:var(--ink);">1. The Security of Online PDF Tools (Aapke Files ki Hifazat)</h3>
+          <p style="color:var(--muted); margin-bottom:12px;">
+            Aaj ke digital دور mein online tools ka istemal barhta ja raha hai, lekin users ke liye data privacy aur document security sab se bara concern hota hai. Quick PDF Tools par hamara maqsad apko ek <strong>Secure PDF Merger</strong> aur reliable environment فراہم karna hai.
+          </p>
+          <p style="color:var(--muted);">
+            <strong>Client-Side Processing Technology:</strong> Hamare zyadatar tools (jaise JPG to PDF, Merge, Split, Rotate, aur Compress) server par files upload kiye baghair aapke browser ke andar locally execute hote hain. Iska matlab yeh hai ke aapke confidential documents, financial statements, ya personal files kabhi bhi kisi remote server par transmit nahi hote aur aapka data 100% aapke control mein rehta hai.
+          </p>
+        </div>
+
+        <!-- 2. Detailed Tool Descriptions -->
+        <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:var(--shadow-sm);">
+          <h3 style="font-size:18px; font-weight:800; margin-bottom:12px; color:var(--ink);">2. Common Tools aur Unke Fayde (Benefits of PDF Tools)</h3>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-top:14px;">
+            <div style="background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:16px;">
+              <h4 style="font-size:15px; font-weight:700; margin-bottom:8px;">Secure PDF Merger</h4>
+              <p style="font-size:13px; color:var(--muted);">Multiple PDF documents ko ek single professional file mein combine karne ke liye behtareen zariya. Baghair kisi security risk ke aap apni reports aur invoices ko aapas mein jorr sakte hain.</p>
+            </div>
+            <div style="background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:16px;">
+              <h4 style="font-size:15px; font-weight:700; margin-bottom:8px;">Fast PDF Compressor</h4>
+              <p style="font-size:13px; color:var(--muted);">Bari size wali PDF files ko email attachments ya web portal uploads ke liye optimize karein. Yeh tool size ko chhota karta hai jabke document ki readability aur quality ko maintain rakhta hai.</p>
+            </div>
+            <div style="background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:16px;">
+              <h4 style="font-size:15px; font-weight:700; margin-bottom:8px;">Free PDF Editor & Converter</h4>
+              <p style="font-size:13px; color:var(--muted);">Images ko PDF mein convert karna, pages ko extract ya organize karna aur rotate karna ab chand seconds ka kaam hai. Kisi costly software subscription ki zarorat nahi.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Troubleshooting Section -->
+        <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:var(--shadow-sm);">
+          <h3 style="font-size:18px; font-weight:800; margin-bottom:12px; color:var(--ink);">3. Troubleshooting: Common PDF Issues aur Unke Hal</h3>
+          <ul style="padding-left:20px; display:grid; gap:10px; color:var(--muted);">
+            <li><strong>Password-Protected Files:</strong> Agar aapki PDF file encrypted ya password-protected hai, toh browser libraries use decrypt nahi kar sakti. Pehle file ka password remove karein ya un-lock karke upload karein.</li>
+            <li><strong>Corrupted or Damaged PDFs:</strong> Agar koi file open nahi ho rahi ya "Invalid PDF structure" error aa raha hai, toh file corrupt ho sakti hai. Kisi official PDF reader se check karein.</li>
+            <li><strong>Large File Size Limitations:</strong> Bohat bari files (jaise 100MB+) browser memory limits ki wajah se slow process ho sakti hain. Behtar hai ke files ko chunks mein process karein ya pehle compress karein.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
