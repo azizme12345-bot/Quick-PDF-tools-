@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://quick-pdf-tools-2zxk.vercel.app/sitemap.xml
