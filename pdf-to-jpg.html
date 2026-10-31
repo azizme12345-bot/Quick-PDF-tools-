@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1769ff">
+<title>PDF to JPG — Convert PDF Pages to High-Quality Images Free | Quick PDF Tools</title>
+<meta name="description" content="Convert PDF pages into high-resolution JPG images online for free. Fast, secure, and easy PDF to image converter.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://quick-pdf-tools-2zxk.vercel.app/pdf-to-jpg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quick PDF Tools">
+<meta property="og:title" content="PDF to JPG — Convert PDF Pages to High-Quality Images Free">
+<meta property="og:description" content="Convert PDF pages into image files right in your browser — fast, free, and secure.">
+<meta property="og:url" content="https://quick-pdf-tools-2zxk.vercel.app/pdf-to-jpg">
+<meta property="og:image" content="https://quick-pdf-tools-2zxk.vercel.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF to JPG — Convert PDF Pages to High-Quality Images Free">
+<meta name="twitter:description" content="Convert PDF pages into image files right in your browser.">
+<meta name="twitter:image" content="https://quick-pdf-tools-2zxk.vercel.app/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"PDF to JPG - Quick PDF Tools","url":"https://quick-pdf-tools-2zxk.vercel.app/pdf-to-jpg","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Convert PDF pages to JPG images online for free."}</script>
+<style>
+:root {
+  --blue: #1769ff;
+  --blue-hover: #0d54db;
+  --purple: #7655f6;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --soft: #f1f5f9;
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 20px 40px rgba(23, 105, 255, 0.12);
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+button, input, select { font: inherit; }
+button, a { touch-action: manipulation; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; }
+.wrap { max-width: 1200px; margin: auto; padding: 0 24px; }
+header { height: 72px; background: rgba(255, 255, 255, 0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; backdrop-filter: blur(16px); }
+.nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 19px; letter-spacing: -0.5px; }
+.logo { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, #ff416c, #ff4b2b); display: grid; place-items: center; color: white; font-size: 22px; box-shadow: 0 6px 16px rgba(255, 65, 108, 0.3); }
+.brand .accent { color: var(--blue); }
+nav { display: flex; align-items: center; gap: 28px; color: #475569; font-size: 14px; font-weight: 600; }
+nav a:hover { color: var(--blue); }
+.actions { display: flex; gap: 10px; }
+.icon-btn { width: 40px; height: 40px; border: 1px solid var(--line); background: white; border-radius: 12px; color: var(--ink); display: grid; place-items: center; font-size: 16px; }
+.icon-btn:hover { border-color: var(--blue); color: var(--blue); }
+.hero { padding: 48px 0 24px; background: radial-gradient(circle at 80% 20%, #eef2ff 0%, transparent 40%); }
+h1 { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -1.5px; margin: 12px 0 12px; font-weight: 900; }
+h1 em { font-style: normal; background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { color: var(--muted); font-size: 15px; max-width: 600px; margin-bottom: 16px; }
+.workspace { padding: 16px 0 32px; }
+.work-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.work-head { padding: 20px 24px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
+.work-head h2 { margin: 0; font-size: 20px; font-weight: 800; }
+.status { font-size: 12px; font-weight: 700; color: #059669; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 6px 14px; border-radius: 30px; }
+.work-body { display: grid; grid-template-columns: 260px minmax(0, 1fr); min-height: 360px; }
+.tool-sidebar { padding: 20px 16px; border-right: 1px solid var(--line); background: #f8fafc; }
+.tool-sidebar label { display: block; font-size: 11px; color: var(--muted); font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 8px 12px; }
+.tool-choice { width: 100%; display: flex; align-items: center; gap: 12px; text-align: left; border: 1px solid transparent; background: transparent; color: var(--ink); padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: 700; margin-bottom: 4px; transition: all 0.2s; }
+.tool-choice .mini { width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; background: #e0f2fe; color: var(--blue); font-size: 16px; }
+.tool-choice.active, .tool-choice:hover { background: white; border-color: #cbd5e1; color: var(--blue); box-shadow: var(--shadow-sm); }
+.work-main { padding: 24px; min-width: 0; }
+.selected-tool { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.selected-tool .big-icon { width: 48px; height: 48px; border-radius: 14px; background: #ffe4e6; color: #e11d48; display: grid; place-items: center; font-size: 24px; font-weight: 800; }
+.selected-tool h3 { margin: 0 0 4px; font-size: 18px; font-weight: 800; }
+.selected-tool p { margin: 0; color: var(--muted); font-size: 13px; }
+.drop { border: 2px dashed #93c5fd; background: #f0f9ff; border-radius: 18px; min-height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; gap: 8px; }
+.cloud { font-size: 34px; color: var(--blue); }
+.drop strong { font-size: 14px; color: var(--ink); font-weight: 700; }
+.drop small { font-size: 12px; color: var(--muted); }
+.drop-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
+.file-input { display: none; }
+.file-list { display: grid; gap: 10px; margin-top: 16px; }
+.file-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: white; }
+.file-meta { min-width: 0; flex: 1; }
+.file-meta strong { display: block; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; }
+.file-meta small { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
+.remove { border: 0; background: transparent; color: #94a3b8; font-size: 20px; cursor: pointer; }
+.settings { display: none; }
+.primary { border: 0; background: linear-gradient(135deg, var(--blue), #4f46e5); color: white; border-radius: 12px; padding: 12px 20px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(23, 105, 255, 0.35); }
+.primary:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
+.secondary { border: 1px solid var(--line); background: white; color: var(--ink); border-radius: 12px; padding: 11px 18px; font-weight: 700; cursor: pointer; }
+.process-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.process-row .primary { flex: 1; min-width: 160px; }
+.progress-wrap { height: 8px; background: #e2e8f0; border-radius: 10px; overflow: hidden; margin-top: 16px; display: none; }
+.progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--blue), var(--purple)); }
+.result { display: none; margin-top: 20px; border: 1px solid #a7f3d0; background: #ecfdf5; border-radius: 16px; padding: 18px; }
+.result-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.result-head strong { font-size: 15px; color: #065f46; font-weight: 800; }
+.preview-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 14px; margin-top: 16px; }
+.preview-item { border: 1px solid #cbd5e1; background: white; border-radius: 12px; overflow: hidden; }
+.preview-item img, .preview-item canvas { width: 100%; height: 150px; object-fit: contain; background: #f8fafc; display: block; }
+.preview-item .preview-name { font-size: 11px; padding: 8px; overflow-wrap: anywhere; color: #334155; font-weight: 600; }
+.preview-item a { display: block; margin: 0 8px 8px; text-align: center; background: var(--blue); color: white; border-radius: 8px; padding: 8px; font-size: 12px; font-weight: 700; }
+footer { margin-top: 40px; background: #0f172a; color: #f8fafc; padding: 32px 0 20px; font-size: 12px; }
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translate(-50%, 20px); background: #0f172a; color: white; padding: 12px 20px; border-radius: 30px; font-size: 13px; font-weight: 600; opacity: 0; pointer-events: none; transition: all 0.25s; z-index: 100; box-shadow: var(--shadow-lg); }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+@media (max-width: 640px) {
+  .hero { padding: 24px 0 12px; }
+  .work-body { grid-template-columns: 1fr; }
+  .tool-sidebar { display: flex; overflow-x: auto; padding: 10px; background: white; border-right: 0; border-bottom: 1px solid var(--line); }
+  .tool-sidebar label { display: none; }
+  .tool-choice { min-width: max-content; padding: 8px 10px; font-size: 12px; margin-bottom: 0; }
+  .work-main { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><span class="logo">▤</span><span>Quick PDF <span class="accent">Tools</span></span></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/jpg-to-pdf">JPG to PDF</a>
+      <a href="/pdf-to-jpg">PDF to JPG</a>
+      <a href="/merge-pdf">Merge PDF</a>
+      <a href="/compress-pdf">Compress PDF</a>
+    </nav>
+    <div class="actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">☾</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Convert <em>PDF to JPG</em> Online</h1>
+      <p>Extract and convert every page of your PDF document into high-resolution JPG images.</p>
+    </div>
+  </section>
+
+  <section class="workspace" id="workspace">
+    <div class="wrap">
+      <div class="work-card">
+        <div class="work-head">
+          <div>
+            <h2>PDF to JPG Workspace</h2>
+            <p style="margin:4px 0 0; font-size:13px; color:var(--muted);">Select a PDF to convert pages to images.</p>
+          </div>
+          <span class="status" id="engineStatus">Ready to use</span>
+        </div>
+        <div class="work-body">
+          <aside class="tool-sidebar">
+            <label>Tool</label>
+            <button class="tool-choice" data-tool="jpgpdf"><span class="mini">▧</span> JPG to PDF</button>
+            <button class="tool-choice active" data-tool="pdfjpg"><span class="mini">▤</span> PDF to JPG</button>
+            <button class="tool-choice" data-tool="merge"><span class="mini">＋</span> Merge PDF</button>
+            <button class="tool-choice" data-tool="compress"><span class="mini">⇩</span> Compress PDF</button>
+            <button class="tool-choice" data-tool="wordpdf"><span class="mini">W</span> Word to PDF</button>
+          </aside>
+          <div class="work-main">
+            <div class="selected-tool">
+              <span class="big-icon" id="activeIcon">▤</span>
+              <div>
+                <h3 id="activeTitle">PDF to JPG</h3>
+                <p id="activeDesc">Convert PDF pages into image files you can preview and download.</p>
+              </div>
+            </div>
+            
+            <div class="drop" id="dropZone">
+              <div class="cloud">☁</div>
+              <strong id="dropTitle">Drag & drop your PDF files here</strong>
+              <small id="dropSub">PDF files only · Each page becomes a JPG image</small>
+              <div class="drop-actions">
+                <button class="primary" id="chooseBtn">Choose Files</button>
+                <button class="secondary" id="clearBtn">Clear Files</button>
+              </div>
+              <input class="file-input" id="fileInput" type="file" accept="application/pdf,.pdf" multiple>
+            </div>
+
+            <div id="fileCountBanner" style="margin-top:14px; font-weight:700; font-size:13px; color:var(--blue);"></div>
+            <div class="file-list" id="fileList"></div>
+            
+            <div class="settings" id="settings"></div>
+            
+            <div class="process-row">
+              <button class="primary" id="processBtn" disabled>Convert to JPG →</button>
+              <button class="secondary" id="resetBtn">Reset</button>
+            </div>
+            
+            <div class="progress-wrap" id="progressWrap">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+            
+            <div class="result" id="result">
+              <div class="result-head">
+                <div>
+                  <strong id="resultTitle">✓ Conversion complete</strong><br>
+                  <small id="resultSub" style="color:#047857; font-size:12px;">Preview your converted files below.</small>
+                </div>
+                <button class="primary" id="downloadAllBtn">Download Result</button>
+              </div>
+              <div class="preview-grid" id="previewGrid"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+    <span>© 2026 Quick PDF Tools. All rights reserved.</span>
+    <div style="display:flex; gap:20px;">
+      <a href="/">Home</a>
+      <a href="/sitemap.xml" target="_blank">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+<script>
+window.INITIAL_TOOL = 'pdfjpg';
+</script>
+<script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

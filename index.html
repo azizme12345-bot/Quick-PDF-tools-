@@ -163,8 +163,10 @@ h1 em { font-style: normal; background: linear-gradient(135deg, var(--blue), var
   font-weight: 700;
   box-shadow: 0 4px 14px rgba(23, 105, 255, 0.35);
   transition: all 0.2s;
+  cursor: pointer;
 }
 .primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(23, 105, 255, 0.45); }
+.primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
 .secondary {
   border: 1px solid var(--line);
   background: white;
@@ -173,6 +175,7 @@ h1 em { font-style: normal; background: linear-gradient(135deg, var(--blue), var
   padding: 11px 18px;
   font-weight: 700;
   transition: all 0.2s;
+  cursor: pointer;
 }
 .secondary:hover { background: var(--soft); border-color: #cbd5e1; }
 
@@ -289,7 +292,7 @@ h1 em { font-style: normal; background: linear-gradient(135deg, var(--blue), var
 .file-meta { min-width: 0; flex: 1; }
 .file-meta strong { display: block; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; }
 .file-meta small { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
-.remove { border: 0; background: transparent; color: #94a3b8; font-size: 20px; transition: color 0.2s; }
+.remove { border: 0; background: transparent; color: #94a3b8; font-size: 20px; transition: color 0.2s; cursor: pointer; }
 .remove:hover { color: #ef4444; }
 
 .settings { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin: 18px 0; }
@@ -331,6 +334,7 @@ h1 em { font-style: normal; background: linear-gradient(135deg, var(--blue), var
   min-height: 130px;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
 }
 .tool-card:hover { transform: translateY(-4px); border-color: #93c5fd; box-shadow: var(--shadow); }
 .tool-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; font-size: 20px; margin-bottom: 12px; font-weight: 700; }
@@ -343,7 +347,7 @@ h1 em { font-style: normal; background: linear-gradient(135deg, var(--blue), var
 .cyan { background: #cffaff; color: #0891b2; }
 .pink { background: #fce7f3; color: #db2777; }
 
-.tool-card h3 { font-size: 14px; margin: 0 0 6px; font-weight: 800; }
+.tool-card h3 { font-size: 14px; margin: 0 0 6px; font-weight: 800; color: var(--ink); }
 .tool-card p { font-size: 12px; color: var(--muted); line-height: 1.4; margin: 0; }
 
 .categories { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
@@ -417,32 +421,6 @@ footer { margin-top: 40px; background: #0f172a; color: #f8fafc; padding: 40px 0 
 }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-/* Dark Mode */
-body.dark {
-  --ink: #f8fafc;
-  --muted: #94a3b8;
-  --line: #1e293b;
-  --bg: #090d16;
-  --card: #0f172a;
-  --soft: #1e293b;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-}
-body.dark header, body.dark .searchbox, body.dark .icon-btn, body.dark .secondary, body.dark .file-row, body.dark .preview-item {
-  background: #0f172a;
-  color: var(--ink);
-}
-body.dark nav { color: #cbd5e1; }
-body.dark .hero { background: radial-gradient(circle at 80% 20%, #1e1b4b 0%, transparent 40%), radial-gradient(circle at 10% 80%, #0c4a6e 0%, transparent 40%); }
-body.dark .tool-sidebar { background: #0b1120; }
-body.dark .tool-choice.active, body.dark .tool-choice:hover { background: #1e293b; color: #38bdf8; border-color: #334155; }
-body.dark .drop { background: #0b1329; border-color: #1d4ed8; }
-body.dark .category, body.dark .security { background: #0f172a; border-color: #1e293b; }
-body.dark .result { background: #064e3b; border-color: #047857; }
-body.dark .result-head strong { color: #a7f3d0; }
-body.dark .result-head small { color: #6ee7b7; }
-body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: white; border-color: #1e293b; }
-
 /* Responsive Adjustments */
 @media (max-width: 900px) {
   nav { gap: 16px; }
@@ -472,20 +450,13 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
   nav.open { display: flex; }
   .menu-btn { display: grid; }
   
-  .hero { padding: 36px 0 20px; }
+  /* Mobile First Screen Optimization: Shorter hero and hide floating art */
+  .hero { padding: 24px 0 12px; }
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-art { min-height: 210px; order: -1; }
-  .glow { width: 220px; height: 190px; }
-  .pdf-illustration { width: 130px; height: 155px; }
-  .pdf-sheet { width: 80px; height: 105px; font-size: 32px; }
-  .float { font-size: 16px; padding: 8px 12px; }
-  .f1 { left: 2%; top: 10px; }
-  .f2 { right: 2%; top: 20px; }
-  .f3 { left: 4%; bottom: 10px; }
-  .f4 { right: 2%; bottom: 10px; }
+  .hero-art { display: none; }
   
-  h1 { font-size: 36px; letter-spacing: -1px; }
-  .hero p { font-size: 14px; }
+  h1 { font-size: 32px; letter-spacing: -1px; margin: 10px 0 8px; }
+  .hero p { font-size: 13px; margin-bottom: 16px; }
   
   .work-head { padding: 16px; }
   .work-body { grid-template-columns: 1fr; }
@@ -503,7 +474,7 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
   .tool-choice .mini { width: 26px; height: 26px; font-size: 14px; }
   
   .work-main { padding: 16px; }
-  .drop { min-height: 150px; padding: 16px; }
+  .drop { min-height: 140px; padding: 16px; }
   .process-row .primary { min-width: 100%; }
   
   .tools-grid, .categories { grid-template-columns: repeat(2, 1fr); gap: 10px; }
@@ -522,9 +493,9 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#home"><span class="logo">▤</span><span>Quick PDF <span class="accent">Tools</span></span></a>
+    <a class="brand" href="/"><span class="logo">▤</span><span>Quick PDF <span class="accent">Tools</span></span></a>
     <nav id="nav">
-      <a href="#home">Home</a>
+      <a href="/">Home</a>
       <a href="#tools">All Tools</a>
       <a href="#categories">Categories</a>
       <a href="#about">About</a>
@@ -624,7 +595,7 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
             </div>
             
             <div class="process-row">
-              <button class="primary" id="processBtn">Convert to PDF →</button>
+              <button class="primary" id="processBtn" disabled>Convert to PDF →</button>
               <button class="secondary" id="resetBtn">Reset</button>
             </div>
             
@@ -674,8 +645,6 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
       <div class="categories">
         <a class="category" href="/pdf-to-jpg" onclick="toolCardClick(event, 'pdfjpg', 'PDF to JPG')"><span class="tool-icon red">⇄</span><span><strong>Convert PDF</strong><small>File conversions</small></span></a>
         <a class="category" href="/merge-pdf" onclick="toolCardClick(event, 'merge', 'Merge PDF')"><span class="tool-icon purple">▤</span><span><strong>Organize PDF</strong><small>Manage pages</small></span></a>
-        <a class="category" href="#" onclick="toast('Security tools require specialized encryption modules.')"><span class="tool-icon green">♙</span><span><strong>PDF Security</strong><small>Protect your files</small></span></a>
-        <a class="category" href="#" onclick="toast('PDF editing requires an interactive annotation engine.')"><span class="tool-icon blue">✎</span><span><strong>Edit PDF</strong><small>Make changes</small></span></a>
         <a class="category" href="/image-to-pdf" onclick="toolCardClick(event, 'jpgpdf', 'JPG to PDF')"><span class="tool-icon cyan">▧</span><span><strong>Image Tools</strong><small>PDF and images</small></span></a>
       </div>
     </div>
@@ -720,71 +689,18 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
       </div>
     </div>
   </section>
-
-  <section class="section" id="eeat-guide">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <h2>📖 Comprehensive Guide & E-E-A-T Insights</h2>
-          <p>Authoritative information on PDF security, tool benefits, and expert troubleshooting.</p>
-        </div>
-      </div>
-      
-      <div style="display:grid; gap:24px; color:var(--ink); font-size:14px; line-height:1.7;">
-        <!-- 1. Security Guide -->
-        <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:var(--shadow-sm);">
-          <h3 style="font-size:18px; font-weight:800; margin-bottom:12px; color:var(--ink);">1. The Security of Online PDF Tools (Aapke Files ki Hifazat)</h3>
-          <p style="color:var(--muted); margin-bottom:12px;">
-            Aaj ke digital دور mein online tools ka istemal barhta ja raha hai, lekin users ke liye data privacy aur document security sab se bara concern hota hai. Quick PDF Tools par hamara maqsad apko ek <strong>Secure PDF Merger</strong> aur reliable environment فراہم karna hai.
-          </p>
-          <p style="color:var(--muted);">
-            <strong>Client-Side Processing Technology:</strong> Hamare zyadatar tools (jaise JPG to PDF, Merge, Split, Rotate, aur Compress) server par files upload kiye baghair aapke browser ke andar locally execute hote hain. Iska matlab yeh hai ke aapke confidential documents, financial statements, ya personal files kabhi bhi kisi remote server par transmit nahi hote aur aapka data 100% aapke control mein rehta hai.
-          </p>
-        </div>
-
-        <!-- 2. Detailed Tool Descriptions -->
-        <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:var(--shadow-sm);">
-          <h3 style="font-size:18px; font-weight:800; margin-bottom:12px; color:var(--ink);">2. Common Tools aur Unke Fayde (Benefits of PDF Tools)</h3>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-top:14px;">
-            <div style="background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:16px;">
-              <h4 style="font-size:15px; font-weight:700; margin-bottom:8px;">Secure PDF Merger</h4>
-              <p style="font-size:13px; color:var(--muted);">Multiple PDF documents ko ek single professional file mein combine karne ke liye behtareen zariya. Baghair kisi security risk ke aap apni reports aur invoices ko aapas mein jorr sakte hain.</p>
-            </div>
-            <div style="background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:16px;">
-              <h4 style="font-size:15px; font-weight:700; margin-bottom:8px;">Fast PDF Compressor</h4>
-              <p style="font-size:13px; color:var(--muted);">Bari size wali PDF files ko email attachments ya web portal uploads ke liye optimize karein. Yeh tool size ko chhota karta hai jabke document ki readability aur quality ko maintain rakhta hai.</p>
-            </div>
-            <div style="background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:16px;">
-              <h4 style="font-size:15px; font-weight:700; margin-bottom:8px;">Free PDF Editor & Converter</h4>
-              <p style="font-size:13px; color:var(--muted);">Images ko PDF mein convert karna, pages ko extract ya organize karna aur rotate karna ab chand seconds ka kaam hai. Kisi costly software subscription ki zarorat nahi.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Troubleshooting Section -->
-        <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:var(--shadow-sm);">
-          <h3 style="font-size:18px; font-weight:800; margin-bottom:12px; color:var(--ink);">3. Troubleshooting: Common PDF Issues aur Unke Hal</h3>
-          <ul style="padding-left:20px; display:grid; gap:10px; color:var(--muted);">
-            <li><strong>Password-Protected Files:</strong> Agar aapki PDF file encrypted ya password-protected hai, toh browser libraries use decrypt nahi kar sakti. Pehle file ka password remove karein ya un-lock karke upload karein.</li>
-            <li><strong>Corrupted or Damaged PDFs:</strong> Agar koi file open nahi ho rahi ya "Invalid PDF structure" error aa raha hai, toh file corrupt ho sakti hai. Kisi official PDF reader se check karein.</li>
-            <li><strong>Large File Size Limitations:</strong> Bohat bari files (jaise 100MB+) browser memory limits ki wajah se slow process ho sakti hain. Behtar hai ke files ko chunks mein process karein ya pehle compress karein.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer id="contact">
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="#home"><span class="logo">▤</span><span>Quick PDF <span class="accent">Tools</span></span></a>
+        <a class="brand" href="/"><span class="logo">▤</span><span>Quick PDF <span class="accent">Tools</span></span></a>
         <p>Simple, fast, and accessible tools to help you work with PDF documents from anywhere.</p>
       </div>
       <div class="footer-col">
         <strong>Quick Links</strong>
-        <a href="#home">Home</a>
+        <a href="/">Home</a>
         <a href="#tools">All Tools</a>
         <a href="#categories">Categories</a>
         <a href="#about">About Us</a>
@@ -821,19 +737,7 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
     </div>
     <div style="font-size:13px; line-height:1.7; color:var(--muted); display:grid; gap:14px;">
       <p><strong style="color:var(--ink);">1. In-Browser Local Processing</strong><br>
-      All active tools on Quick PDF Tools (including JPG to PDF, PDF to JPG, Merge, Compress, Split, Rotate, Delete, Extract, Watermark, and Page Numbers) run locally on your device within your web browser using client-side JavaScript libraries (PDF-Lib and PDF.js). Your files are not uploaded to our servers or any remote cloud storage.</p>
-
-      <p><strong style="color:var(--ink);">2. File Handling & Memory</strong><br>
-      Documents and images remain in your browser's temporary runtime memory while processing. Object URLs and temporary references are released when you clear, reset, or close your session. No guarantee of forensic physical memory erasure is made.</p>
-
-      <p><strong style="color:var(--ink);">3. Conversion History</strong><br>
-      If you choose to use the Conversion History feature, summary records (tool used, file name, and timestamp) are stored locally in your browser's <code>localStorage</code>. No file contents are stored. You can clear this history at any time using the "Clear All History" button.</p>
-
-      <p><strong style="color:var(--ink);">4. Third-Party CDNs</strong><br>
-      The website loads standard open-source library scripts (e.g., PDF-Lib and PDF.js) from public content delivery networks (CDNs). No document content, filenames, or user data are transmitted to these providers.</p>
-
-      <p><strong style="color:var(--ink);">5. Advanced Conversion Notice</strong><br>
-      Certain advanced document formats (such as editable Word, Excel, or PowerPoint conversions and OCR) require dedicated server infrastructure. These are marked as requiring external engines and are not processed silently.</p>
+      All active tools on Quick PDF Tools run locally on your device within your web browser using client-side JavaScript libraries (PDF-Lib and PDF.js). Your files are not uploaded to our servers or any remote cloud storage.</p>
     </div>
   </div>
 </div>
@@ -847,13 +751,7 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
     </div>
     <div style="font-size:13px; line-height:1.7; color:var(--muted); display:grid; gap:14px;">
       <p><strong style="color:var(--ink);">1. Use of Service</strong><br>
-      Quick PDF Tools is provided free of charge for personal and professional document management. You are responsible for ensuring that you have the right to process any documents or images you use with this service.</p>
-
-      <p><strong style="color:var(--ink);">2. Intellectual Property</strong><br>
-      You retain all copyright, ownership, and rights to the documents and files you process. We claim no ownership over your content.</p>
-
-      <p><strong style="color:var(--ink);">3. Limitation of Liability</strong><br>
-      This software is provided "as is", without warranty of any kind. Users are advised to retain backup copies of important documents prior to processing.</p>
+      Quick PDF Tools is provided free of charge for personal and professional document management.</p>
     </div>
   </div>
 </div>
@@ -866,7 +764,7 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
       <button class="icon-btn" style="width:32px; height:32px; font-size:14px;" onclick="closeDisclaimer()">×</button>
     </div>
     <div style="font-size:13px; line-height:1.7; color:var(--muted); display:grid; gap:14px;">
-      <p>Quick PDF Tools is an independent browser-based utility. We are not affiliated with, endorsed by, or sponsored by Adobe Systems Incorporated or other trademark holders. All trademarks referenced belong to their respective owners.</p>
+      <p>Quick PDF Tools is an independent browser-based utility.</p>
     </div>
   </div>
 </div>
@@ -888,20 +786,13 @@ body.dark .float, body.dark .pdf-illustration { background: #0f172a; color: whit
 <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
-try {
-  const canonicalEl = document.querySelector('link[rel="canonical"]');
-  if (canonicalEl) canonicalEl.href = 'https://quick-pdf-tools-2zxk.vercel.app/';
-  const ogUrlEl = document.querySelector('meta[property="og:url"]');
-  if (ogUrlEl) ogUrlEl.content = 'https://quick-pdf-tools-2zxk.vercel.app/';
-} catch (e) {}
-
 if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
 const toolData=[
   {name:'Merge PDF',desc:'Combine multiple PDFs',icon:'▤',color:'red',key:'merge'},
   {name:'Split PDF',desc:'Extract pages from PDF',icon:'✂',color:'orange',key:'split'},
   {name:'Compress PDF',desc:'Reduce file size',icon:'⇩',color:'green',key:'compress'},
-  {name:'PDF to Word',desc:'Convert to editable Word',icon:'W',color:'blue',key:'pdfword'},
+  {name:'PDF to Word',desc:'Convert to editable Word',icon:'⇄W',color:'blue',key:'pdfword'},
   {name:'Word to PDF',desc:'Convert Word to PDF',icon:'W',color:'blue',key:'wordpdf'},
   {name:'PDF to JPG',desc:'Convert PDF pages to images',icon:'▧',color:'purple',key:'pdfjpg'},
   {name:'JPG to PDF',desc:'Convert images to PDF',icon:'▧',color:'orange',key:'jpgpdf'},
@@ -975,7 +866,7 @@ function toast(msg){const el=document.getElementById('toast');el.textContent=msg
 function showAllTools(e){e.preventDefault();document.getElementById('all-tools').hidden=false;document.getElementById('allGrid').innerHTML=toolData.map(card).join('');document.getElementById('all-tools').scrollIntoView({behavior:'smooth'})}
 function searchTools(){const q=document.getElementById('toolSearch').value.trim().toLowerCase();document.getElementById('all-tools').hidden=false;const found=toolData.filter(t=>(t.name+' '+t.desc).toLowerCase().includes(q));document.getElementById('allGrid').innerHTML=found.map(card).join('')||'<p style="grid-column:1/-1;text-align:center;padding:20px;color:var(--muted)">No matching tools found.</p>';document.getElementById('all-tools').scrollIntoView({behavior:'smooth'})}
 
-document.getElementById('toolSearch').addEventListener('keydown',e=>{if(e.key==='Enter')searchTools()});
+document.getElementById('toolSearch')?.addEventListener('keydown',e=>{if(e.key==='Enter')searchTools()});
 document.getElementById('themeBtn').onclick=()=>{document.body.classList.toggle('dark');document.getElementById('themeBtn').textContent=document.body.classList.contains('dark')?'☀':'☾';localStorage.setItem('qpt-dark',document.body.classList.contains('dark')?'1':'0')};
 if(localStorage.getItem('qpt-dark')==='1'){document.body.classList.add('dark');document.getElementById('themeBtn').textContent='☀'}
 document.getElementById('menuBtn').onclick=()=>document.getElementById('nav').classList.toggle('open');
@@ -993,7 +884,7 @@ const toolConfig={
   pdfjpg:{title:'PDF to JPG',desc:'Convert PDF pages into image files you can preview and download.',icon:'▤',accept:'application/pdf,.pdf',multiple:true,drop:'Drag & drop your PDF files here',sub:'PDF files only · Each page becomes a JPG image',button:'Convert to JPG →'},
   merge:{title:'Merge PDF',desc:'Combine multiple PDF documents into one file.',icon:'＋',accept:'application/pdf,.pdf',multiple:true,drop:'Drag & drop PDF files here',sub:'PDF files only · Select at least two documents',button:'Merge PDFs →'},
   compress:{title:'Compress PDF',desc:'Reduce PDF size by rendering pages as optimized images.',icon:'⇩',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF to compress',sub:'PDF files only · Image-based compression',button:'Compress PDF →'},
-  wordpdf:{title:'Word to PDF',desc:'Office document conversion requires a server-side document rendering service.',icon:'W',accept:'.doc,.docx',multiple:false,drop:'Choose a Word document',sub:'DOC or DOCX files',button:'Convert to PDF →'},
+  wordpdf:{title:'Word to PDF',desc:'Convert Word documents to PDF.',icon:'W',accept:'.doc,.docx',multiple:false,drop:'Choose a Word document',sub:'DOC or DOCX files',button:'Convert to PDF →'},
   split:{title:'Split PDF',desc:'Save selected pages into a new PDF. Enter page numbers or ranges below.',icon:'✂',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF to split',sub:'PDF files only · Enter pages below',button:'Split PDF →'},
   rotate:{title:'Rotate PDF',desc:'Rotate all pages of a PDF by 90 degrees.',icon:'⟳',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF to rotate',sub:'PDF files only',button:'Rotate PDF →'},
   delete:{title:'Delete PDF Pages',desc:'Remove selected pages using page numbers or ranges.',icon:'⌫',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF',sub:'PDF files only · Enter pages to remove below',button:'Delete Pages →'},
@@ -1002,7 +893,7 @@ const toolConfig={
   numbers:{title:'Page Numbers',desc:'Add page numbers to the bottom of each PDF page.',icon:'№',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF',sub:'PDF files only',button:'Add Page Numbers →'},
   protect:{title:'Protect PDF',desc:'Password encryption requires a dedicated encryption engine.',icon:'♙',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF',sub:'PDF files only',button:'Protect PDF →'},
   unlock:{title:'Unlock PDF',desc:'Password-protected PDFs require decryption credentials.',icon:'♧',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF',sub:'PDF files only',button:'Unlock PDF →'},
-  pdfword:{title:'PDF to Word',desc:'Exporting a fully editable Word file requires an OCR and document engine.',icon:'W',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF',sub:'PDF files only',button:'Convert to Word →'},
+  pdfword:{title:'PDF to Word',desc:'Exporting a fully editable Word file requires an OCR and document engine.',icon:'⇄W',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF',sub:'PDF files only',button:'Convert to Word →'},
   edit:{title:'Edit PDF',desc:'Direct text editing of existing PDF content requires an advanced editor engine.',icon:'✎',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF',sub:'PDF files only',button:'Edit PDF →'},
   organize:{title:'Organize Pages',desc:'Create a PDF containing pages in the order you specify.',icon:'▦',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF',sub:'PDF files only · Enter pages in desired order',button:'Organize Pages →'},
   sign:{title:'Sign PDF',desc:'Digital signature verification requires cryptographic key infrastructure.',icon:'✍',accept:'application/pdf,.pdf',multiple:false,drop:'Choose a PDF',sub:'PDF files only',button:'Sign PDF →'},
@@ -1011,48 +902,42 @@ const toolConfig={
   pptpdf:{title:'PowerPoint to PDF',desc:'Presentation rendering requires a slide conversion service.',icon:'P',accept:'.ppt,.pptx',multiple:false,drop:'Choose a presentation',sub:'PPT or PPTX files',button:'Convert to PDF →'}
 };
 
-function updateMetaForTool(key){
-  const c = toolConfig[key];
-  if(!c) return;
-  document.title = `${c.title} — Quick PDF Tools`;
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if(metaDesc) metaDesc.content = c.desc;
-  const canonical = document.querySelector('link[rel="canonical"]');
-  const path = toolToPath[key] || '';
-  if(canonical) canonical.href = 'https://quick-pdf-tools-2zxk.vercel.app' + path;
-}
-
 function selectTool(key, updateUrl = true, shouldScroll = true){
   if(!toolConfig[key])return;
   activeTool=key;
   const c=toolConfig[key];
   document.querySelectorAll('.tool-choice').forEach(b=>b.classList.toggle('active',b.dataset.tool===key));
-  $('activeTitle').textContent=c.title;
-  $('activeDesc').textContent=c.desc;
-  $('activeIcon').textContent=c.icon;
-  $('dropTitle').textContent=c.drop;
-  $('dropSub').textContent=c.sub;
-  $('processBtn').textContent=c.button;
-  $('fileInput').accept=c.accept;
-  $('fileInput').multiple=c.multiple;
-  $('settings').style.display=['jpgpdf','split','delete','extract','watermark','organize'].includes(key)?'flex':'none';
-  $('rangeLabel').style.display=['split','delete','extract','organize'].includes(key)?'flex':'none';
-  $('watermarkLabel').style.display=key==='watermark'?'flex':'none';
-  $('pageRange').value=''; $('watermarkText').value='';
-  $('fileInput').value='';
+  if($('activeTitle')) $('activeTitle').textContent=c.title;
+  if($('activeDesc')) $('activeDesc').textContent=c.desc;
+  if($('activeIcon')) $('activeIcon').textContent=c.icon;
+  if($('dropTitle')) $('dropTitle').textContent=c.drop;
+  if($('dropSub')) $('dropSub').textContent=c.sub;
+  if($('processBtn')) {
+    $('processBtn').textContent=c.button;
+    $('processBtn').disabled = selectedFiles.length === 0;
+  }
+  if($('fileInput')) {
+    $('fileInput').accept=c.accept;
+    $('fileInput').multiple=c.multiple;
+    $('fileInput').value='';
+  }
+  if($('settings')) $('settings').style.display=['jpgpdf','split','delete','extract','watermark','organize'].includes(key)?'flex':'none';
+  if($('rangeLabel')) $('rangeLabel').style.display=['split','delete','extract','organize'].includes(key)?'flex':'none';
+  if($('watermarkLabel')) $('watermarkLabel').style.display=key==='watermark'?'flex':'none';
+  if($('pageRange')) $('pageRange').value=''; 
+  if($('watermarkText')) $('watermarkText').value='';
   selectedFiles=[];
   clearOutputs();
   renderFiles();
-  $('engineStatus').textContent='Ready to use';
+  if($('engineStatus')) $('engineStatus').textContent='Ready to use';
 
   if(updateUrl && toolToPath[key]){
     try {
       history.pushState({ tool: key }, '', toolToPath[key]);
     } catch(e) {}
   }
-  updateMetaForTool(key);
 
-  if(shouldScroll){
+  if(shouldScroll && $('workspace')){
     $('workspace').scrollIntoView({behavior:'smooth',block:'start'});
   }
 }
@@ -1070,27 +955,28 @@ function toolCardClick(e, key, name){
 
 window.addEventListener('popstate', (e)=>{
   const path = window.location.pathname.replace(/\/$/, '');
-  const key = (e.state && e.state.tool) || pathToTool[path] || 'jpgpdf';
+  const key = (e.state && e.state.tool) || pathToTool[path] || window.INITIAL_TOOL || 'jpgpdf';
   if(toolConfig[key]){
     selectTool(key, false, false);
   }
 });
 
-// Route detection on initial load
+// Route detection on initial load or window.INITIAL_TOOL
 const initialPath = window.location.pathname.replace(/\/$/, '');
-if(pathToTool[initialPath]){
-  selectTool(pathToTool[initialPath], false, false);
+const defaultInitialKey = window.INITIAL_TOOL || pathToTool[initialPath] || 'jpgpdf';
+if(toolConfig[defaultInitialKey]){
+  selectTool(defaultInitialKey, false, false);
 }
 
-$('chooseBtn').onclick=()=>$('fileInput').click();
-$('clearBtn').onclick=()=>{selectedFiles=[];$('fileInput').value='';renderFiles();clearOutputs()};
-$('resetBtn').onclick=()=>{revokeThumbUrls();selectedFiles=[];$('fileInput').value='';renderFiles();clearOutputs();$('progressWrap').style.display='none';$('progressBar').style.width='0%';$('engineStatus').textContent='Ready to use'};
-$('fileInput').addEventListener('change',e=>addFiles([...e.target.files]));
+if($('chooseBtn')) $('chooseBtn').onclick=()=>$('fileInput').click();
+if($('clearBtn')) $('clearBtn').onclick=()=>{selectedFiles=[];if($('fileInput'))$('fileInput').value='';renderFiles();clearOutputs()};
+if($('resetBtn')) $('resetBtn').onclick=()=>{revokeThumbUrls();selectedFiles=[];if($('fileInput'))$('fileInput').value='';renderFiles();clearOutputs();if($('progressWrap'))$('progressWrap').style.display='none';if($('progressBar'))$('progressBar').style.width='0%';if($('engineStatus'))$('engineStatus').textContent='Ready to use'};
+if($('fileInput')) $('fileInput').addEventListener('change',e=>addFiles([...e.target.files]));
 
 function addFiles(files){
   if(!files.length)return;
   const cfg=toolConfig[activeTool];
-  const MAX_SIZE = 100 * 1024 * 1024; // 100 MB max for in-browser memory
+  const MAX_SIZE = 100 * 1024 * 1024; // 100 MB max
   let skippedZero = 0;
   let skippedSize = 0;
   let valid=files.filter(f=>{
@@ -1109,19 +995,29 @@ function addFiles(files){
   selectedFiles=[...selectedFiles,...valid];
   renderFiles();
   clearOutputs();
-  $('engineStatus').textContent=selectedFiles.length+' file(s) selected'
+  if($('engineStatus')) $('engineStatus').textContent=selectedFiles.length+' file(s) selected';
+  if($('processBtn')) $('processBtn').disabled = selectedFiles.length === 0;
 }
 
 function renderFiles(){
   revokeThumbUrls();
   const countBanner = $('fileCountBanner');
-  if(selectedFiles.length > 0) {
-    countBanner.textContent = `${selectedFiles.length} File(s) Selected`;
-  } else {
-    countBanner.textContent = '';
+  if(countBanner) {
+    if(selectedFiles.length > 0) {
+      countBanner.textContent = `${selectedFiles.length} File(s) Selected`;
+    } else {
+      countBanner.textContent = '';
+    }
   }
 
-  $('fileList').innerHTML=selectedFiles.map((f,i)=>{
+  if($('processBtn')) {
+    $('processBtn').disabled = selectedFiles.length === 0;
+  }
+
+  const listEl = $('fileList');
+  if(!listEl) return;
+
+  listEl.innerHTML=selectedFiles.map((f,i)=>{
     const isImg = activeTool==='jpgpdf' && (f.type.startsWith('image/') || /\.(jpe?g|png|webp)$/i.test(f.name));
     let thumbUrl = '';
     if(isImg){
@@ -1155,25 +1051,39 @@ function moveFile(index, direction) {
   clearOutputs();
 }
 
-function removeFile(i){selectedFiles.splice(i,1);renderFiles();clearOutputs()}
+function removeFile(i){
+  selectedFiles.splice(i,1);
+  renderFiles();
+  clearOutputs();
+  if($('processBtn')) $('processBtn').disabled = selectedFiles.length === 0;
+}
 function formatSize(n){if(n<1024)return n+' B';if(n<1048576)return (n/1024).toFixed(1)+' KB';return (n/1048576).toFixed(2)+' MB'}
 function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function clearOutputs(){revokeThumbUrls();outputFiles=[];outputUrls.forEach(URL.revokeObjectURL);outputUrls=[];$('result').style.display='none';$('previewGrid').innerHTML=''}
+function clearOutputs(){
+  revokeThumbUrls();
+  outputFiles=[];
+  outputUrls.forEach(URL.revokeObjectURL);
+  outputUrls=[];
+  if($('result')) $('result').style.display='none';
+  if($('previewGrid')) $('previewGrid').innerHTML='';
+}
 
 const drop=$('dropZone');
-['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag')}));
-['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag')}));
-drop.addEventListener('drop',e=>addFiles([...e.dataTransfer.files]));
+if(drop){
+  ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag')}));
+  ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag')}));
+  drop.addEventListener('drop',e=>addFiles([...e.dataTransfer.files]));
+}
 
-function setProgress(p){$('progressWrap').style.display='block';$('progressBar').style.width=p+'%'}
-$('processBtn').onclick=processFiles;
+function setProgress(p){if($('progressWrap'))$('progressWrap').style.display='block';if($('progressBar'))$('progressBar').style.width=p+'%'}
+if($('processBtn')) $('processBtn').onclick=processFiles;
 
 async function processFiles(){
   if(!selectedFiles.length){toast('Please select file(s) first.');return}
   clearOutputs();
   setProgress(8);
-  $('engineStatus').textContent='Processing…';
-  $('processBtn').disabled=true;
+  if($('engineStatus')) $('engineStatus').textContent='Processing…';
+  if($('processBtn')) $('processBtn').disabled=true;
   try{
     if(activeTool==='jpgpdf')await imagesToPdf();
     else if(activeTool==='pdfjpg')await pdfToImages();
@@ -1190,13 +1100,12 @@ async function processFiles(){
     }
     
     setProgress(100);
-    $('result').style.display='block';
-    $('resultTitle').textContent='✓ Conversion complete';
-    $('resultSub').textContent=outputFiles.length+' result file(s) ready. Preview below and download when ready.';
-    $('engineStatus').textContent='Completed';
+    if($('result')) $('result').style.display='block';
+    if($('resultTitle')) $('resultTitle').textContent='✓ Conversion complete';
+    if($('resultSub')) $('resultSub').textContent=outputFiles.length+' result file(s) ready. Preview below and download when ready.';
+    if($('engineStatus')) $('engineStatus').textContent='Completed';
     renderPreviews();
     
-    // Record history
     const toolTitle = toolConfig[activeTool].title;
     const fileNames = selectedFiles.map(f=>f.name).join(', ');
     addHistoryRecord(toolTitle, fileNames);
@@ -1205,9 +1114,9 @@ async function processFiles(){
   }catch(err){
     console.error(err);
     toast(err.message||'Could not process files. Please verify file format.');
-    $('engineStatus').textContent='Needs attention'
+    if($('engineStatus')) $('engineStatus').textContent='Needs attention';
   }finally{
-    $('processBtn').disabled=false
+    if($('processBtn')) $('processBtn').disabled=selectedFiles.length === 0;
   }
 }
 
@@ -1306,7 +1215,7 @@ async function imagesToPdf(){
       throw new Error(`Failed to process image "${f.name}". It may be corrupted or unsupported.`);
     }
     let w=img.width,h=img.height;
-    const size=$('pageSize').value;
+    const size=$('pageSize')?.value || 'fit';
     if(size==='a4'||size==='letter'){
       const pageW=size==='a4'?595.28:612,pageH=size==='a4'?841.89:792,scale=Math.min(pageW/w,pageH/h);
       const page=pdf.addPage([pageW,pageH]);
@@ -1360,6 +1269,7 @@ async function mergePdfs(){
 function renderPreviews(){
   outputUrls.forEach(URL.revokeObjectURL);
   outputUrls=[];
+  if(!$('previewGrid'))return;
   $('previewGrid').innerHTML='';
   for(const f of outputFiles){
     const url=URL.createObjectURL(f.blob);
@@ -1405,7 +1315,7 @@ async function renderPdfPreview(blob,canvas){
   await page.render({canvasContext:canvas.getContext('2d'),viewport}).promise
 }
 
-$('downloadAllBtn').onclick=()=>{
+if($('downloadAllBtn')) $('downloadAllBtn').onclick=()=>{
   if(!outputFiles.length)return;
   if(outputFiles.length===1){downloadBlob(outputFiles[0].blob,outputFiles[0].name);return}
   outputFiles.forEach((f,i)=>setTimeout(()=>downloadBlob(f.blob,f.name),i*250));
@@ -1423,18 +1333,17 @@ function downloadBlob(blob,name){
 
 // History Functions
 function openHistory(e){
-  e.preventDefault();
-  $('nav').classList.remove('open');
+  if(e)e.preventDefault();
+  if($('nav'))$('nav').classList.remove('open');
   renderHistoryList();
-  $('historyModal').style.display = 'grid';
+  if($('historyModal'))$('historyModal').style.display = 'grid';
 }
-function closeHistory(){
-  $('historyModal').style.display = 'none';
-}
+function closeHistory(){if($('historyModal'))$('historyModal').style.display = 'none';}
 function renderHistoryList(){
   let history = [];
   try { history = JSON.parse(localStorage.getItem('qpt_history') || '[]'); } catch(e){}
   const listEl = $('historyList');
+  if(!listEl) return;
   if(!history.length){
     listEl.innerHTML = '<p style="text-align:center; color:var(--muted); padding:20px; font-size:13px;">No history yet.</p>';
     return;
@@ -1481,12 +1390,12 @@ function addHistoryRecord(toolName, fileName) {
   localStorage.setItem('qpt_history', JSON.stringify(history));
 }
 
-function openPrivacy(e){if(e)e.preventDefault();$('privacyModal').style.display='grid';}
-function closePrivacy(){$('privacyModal').style.display='none';}
-function openTerms(e){if(e)e.preventDefault();$('termsModal').style.display='grid';}
-function closeTerms(){$('termsModal').style.display='none';}
-function openDisclaimer(e){if(e)e.preventDefault();$('disclaimerModal').style.display='grid';}
-function closeDisclaimer(){$('disclaimerModal').style.display='none';}
+function openPrivacy(e){if(e)e.preventDefault();if($('privacyModal'))$('privacyModal').style.display='grid';}
+function closePrivacy(){if($('privacyModal'))$('privacyModal').style.display='none';}
+function openTerms(e){if(e)e.preventDefault();if($('termsModal'))$('termsModal').style.display='grid';}
+function closeTerms(){if($('termsModal'))$('termsModal').style.display='none';}
+function openDisclaimer(e){if(e)e.preventDefault();if($('disclaimerModal'))$('disclaimerModal').style.display='grid';}
+function closeDisclaimer(){if($('disclaimerModal'))$('disclaimerModal').style.display='none';}
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
