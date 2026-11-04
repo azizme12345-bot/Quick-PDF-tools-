@@ -20,6 +20,7 @@ export default defineConfig(() => {
           mergePdf: path.resolve(__dirname, 'merge-pdf.html'),
           compressPdf: path.resolve(__dirname, 'compress-pdf.html'),
           wordToPdf: path.resolve(__dirname, 'word-to-pdf.html'),
+          splitPdf: path.resolve(__dirname, 'split-pdf.html'),
         }
       }
     },

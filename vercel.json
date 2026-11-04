@@ -2,7 +2,6 @@
   "cleanUrls": true,
   "redirects": [
     { "source": "/image-to-pdf", "destination": "/jpg-to-pdf", "permanent": true },
-    { "source": "/split-pdf", "destination": "/", "permanent": true },
     { "source": "/word-to-pdf", "destination": "/", "permanent": true },
     { "source": "/pdf-to-word", "destination": "/", "permanent": true },
     { "source": "/edit-pdf", "destination": "/", "permanent": true },
