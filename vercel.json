@@ -1,136 +1,38 @@
 {
-  "rewrites": [
-    {
-      "source": "/jpg-to-pdf",
-      "destination": "/jpg-to-pdf.html"
-    },
-    {
-      "source": "/pdf-to-jpg",
-      "destination": "/pdf-to-jpg.html"
-    },
-    {
-      "source": "/merge-pdf",
-      "destination": "/merge-pdf.html"
-    },
-    {
-      "source": "/compress-pdf",
-      "destination": "/compress-pdf.html"
-    },
-    {
-      "source": "/word-to-pdf",
-      "destination": "/word-to-pdf.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
+  "cleanUrls": true,
   "redirects": [
-    {
-      "source": "/split-pdf",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/rotate-pdf",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/pdf-to-word",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/extract-pages",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/organize-pdf",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/add-watermark",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/page-numbers",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/protect-pdf",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/unlock-pdf",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/edit-pdf",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/sign-pdf",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/ocr-pdf",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/excel-to-pdf",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/ppt-to-pdf",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/delete-pdf-pages",
-      "destination": "/",
-      "permanent": true
-    }
+    { "source": "/image-to-pdf", "destination": "/jpg-to-pdf", "permanent": true },
+    { "source": "/split-pdf", "destination": "/", "permanent": true },
+    { "source": "/word-to-pdf", "destination": "/", "permanent": true },
+    { "source": "/pdf-to-word", "destination": "/", "permanent": true },
+    { "source": "/edit-pdf", "destination": "/", "permanent": true },
+    { "source": "/sign-pdf", "destination": "/", "permanent": true },
+    { "source": "/ocr-pdf", "destination": "/", "permanent": true },
+    { "source": "/excel-to-pdf", "destination": "/", "permanent": true },
+    { "source": "/ppt-to-pdf", "destination": "/", "permanent": true },
+    { "source": "/protect-pdf", "destination": "/", "permanent": true },
+    { "source": "/unlock-pdf", "destination": "/", "permanent": true },
+    { "source": "/rotate-pdf", "destination": "/", "permanent": true },
+    { "source": "/organize-pdf", "destination": "/", "permanent": true },
+    { "source": "/delete-pdf-pages", "destination": "/", "permanent": true },
+    { "source": "/extract-pages", "destination": "/", "permanent": true },
+    { "source": "/add-watermark", "destination": "/", "permanent": true },
+    { "source": "/page-numbers", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
       "source": "/sitemap.xml",
       "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/xml; charset=utf-8"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        },
-        {
-          "key": "X-Robots-Tag",
-          "value": "all"
-        }
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "X-Robots-Tag", "value": "all" }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/plain; charset=utf-8"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
   ]
