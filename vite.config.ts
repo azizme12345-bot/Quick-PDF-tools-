@@ -21,6 +21,10 @@ export default defineConfig(() => {
           compressPdf: path.resolve(__dirname, 'compress-pdf.html'),
           wordToPdf: path.resolve(__dirname, 'word-to-pdf.html'),
           splitPdf: path.resolve(__dirname, 'split-pdf.html'),
+          privacy: path.resolve(__dirname, 'privacy.html'),
+          about: path.resolve(__dirname, 'about.html'),
+          contact: path.resolve(__dirname, 'contact.html'),
+          terms: path.resolve(__dirname, 'terms.html'),
         }
       }
     },

@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="google-site-verification" content="e2RrqWDlKxHOPt0hT0SbW2dvhjsUgITfsuQwy6ZZhjY" />
 <meta name="google-site-verification" content="qi0UgpFOJYaMDvHRl3E5mGMMXtq34YhFTe2mpXxakzQ" />
 <meta name="theme-color" content="#1769ff">
 <meta name="mobile-web-app-capable" content="yes">
@@ -498,9 +497,11 @@ footer { margin-top: 40px; background: #0f172a; color: #f8fafc; padding: 40px 0 
       <a href="/">Home</a>
       <a href="#tools">All Tools</a>
       <a href="#categories">Categories</a>
-      <a href="#about">About</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
       <a href="#history" onclick="openHistory(event)">History</a>
-      <a href="#contact">Contact</a>
     </nav>
     <div class="actions">
       <button class="icon-btn" aria-label="Search tools" onclick="document.getElementById('toolSearch').focus()">⌕</button>
@@ -703,20 +704,19 @@ footer { margin-top: 40px; background: #0f172a; color: #f8fafc; padding: 40px 0 
         <a href="/">Home</a>
         <a href="#tools">All Tools</a>
         <a href="#categories">Categories</a>
-        <a href="#about">About Us</a>
+        <a href="/about">About</a>
       </div>
       <div class="footer-col">
         <strong>Legal</strong>
-        <a href="#privacy" onclick="openPrivacy(event)">Privacy Policy</a>
-        <a href="#terms" onclick="openTerms(event)">Terms of Service</a>
-        <a href="#disclaimer" onclick="openDisclaimer(event)">Disclaimer</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
         <a href="/sitemap.xml" target="_blank" rel="noopener">Sitemap</a>
       </div>
       <div class="footer-col">
         <strong>Help & Support</strong>
-        <a href="#contact">Contact Us</a>
+        <a href="/contact">Contact Us</a>
         <a href="#faq">FAQs</a>
-        <a href="#feedback" onclick="toast('For feedback or inquiries, contact azizme12345@gmail.com')">Send Feedback</a>
+        <a href="/contact">Send Feedback</a>
       </div>
     </div>
     <div class="copyright">
@@ -727,47 +727,6 @@ footer { margin-top: 40px; background: #0f172a; color: #f8fafc; padding: 40px 0 
 </footer>
 
 <div class="toast" id="toast" role="status"></div>
-
-<!-- Privacy Policy Modal -->
-<div id="privacyModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); z-index:200; backdrop-filter:blur(4px); place-items:center; padding:16px;">
-  <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; width:100%; max-width:640px; max-height:85vh; overflow-y:auto; box-shadow:var(--shadow-lg); padding:24px; color:var(--ink);">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid var(--line); padding-bottom:12px;">
-      <h3 style="margin:0; font-size:18px; font-weight:800;">Privacy Policy</h3>
-      <button class="icon-btn" style="width:32px; height:32px; font-size:14px;" onclick="closePrivacy()">×</button>
-    </div>
-    <div style="font-size:13px; line-height:1.7; color:var(--muted); display:grid; gap:14px;">
-      <p><strong style="color:var(--ink);">1. In-Browser Local Processing</strong><br>
-      All active tools on Quick PDF Tools run locally on your device within your web browser using client-side JavaScript libraries (PDF-Lib and PDF.js). Your files are not uploaded to our servers or any remote cloud storage.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Terms of Service Modal -->
-<div id="termsModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); z-index:200; backdrop-filter:blur(4px); place-items:center; padding:16px;">
-  <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; width:100%; max-width:600px; max-height:85vh; overflow-y:auto; box-shadow:var(--shadow-lg); padding:24px; color:var(--ink);">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid var(--line); padding-bottom:12px;">
-      <h3 style="margin:0; font-size:18px; font-weight:800;">Terms of Service</h3>
-      <button class="icon-btn" style="width:32px; height:32px; font-size:14px;" onclick="closeTerms()">×</button>
-    </div>
-    <div style="font-size:13px; line-height:1.7; color:var(--muted); display:grid; gap:14px;">
-      <p><strong style="color:var(--ink);">1. Use of Service</strong><br>
-      Quick PDF Tools is provided free of charge for personal and professional document management.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Disclaimer Modal -->
-<div id="disclaimerModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); z-index:200; backdrop-filter:blur(4px); place-items:center; padding:16px;">
-  <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; width:100%; max-width:600px; max-height:85vh; overflow-y:auto; box-shadow:var(--shadow-lg); padding:24px; color:var(--ink);">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid var(--line); padding-bottom:12px;">
-      <h3 style="margin:0; font-size:18px; font-weight:800;">Disclaimer</h3>
-      <button class="icon-btn" style="width:32px; height:32px; font-size:14px;" onclick="closeDisclaimer()">×</button>
-    </div>
-    <div style="font-size:13px; line-height:1.7; color:var(--muted); display:grid; gap:14px;">
-      <p>Quick PDF Tools is an independent browser-based utility.</p>
-    </div>
-  </div>
-</div>
 
 <!-- History Modal -->
 <div id="historyModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); z-index:200; backdrop-filter:blur(4px); place-items:center; padding:16px;">

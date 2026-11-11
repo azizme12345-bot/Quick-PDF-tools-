@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1769ff">
+<title>About Quick PDF Tools | Free Browser-Based PDF & Image Utilities</title>
+<meta name="description" content="Learn about Quick PDF Tools, who it is for, and how our browser-based image and PDF conversion tools work.">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://quick-pdf-tools-2zxk.vercel.app/about">
+<style>
+:root {
+  --blue: #1769ff;
+  --blue-hover: #0d54db;
+  --purple: #7655f6;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --soft: #f1f5f9;
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 20px 40px rgba(23, 105, 255, 0.12);
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+.wrap { max-width: 1200px; margin: auto; padding: 0 24px; }
+header { height: 72px; background: rgba(255, 255, 255, 0.85); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; backdrop-filter: blur(16px); }
+.nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 19px; letter-spacing: -0.5px; }
+.logo { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, #ff416c, #ff4b2b); display: grid; place-items: center; color: white; font-size: 22px; box-shadow: 0 6px 16px rgba(255, 65, 108, 0.3); }
+.brand .accent { color: var(--blue); }
+nav { display: flex; align-items: center; gap: 20px; color: #475569; font-size: 14px; font-weight: 600; flex-wrap: wrap; }
+nav a:hover { color: var(--blue); }
+.actions { display: flex; gap: 10px; }
+.icon-btn { width: 40px; height: 40px; border: 1px solid var(--line); background: white; border-radius: 12px; color: var(--ink); display: grid; place-items: center; font-size: 16px; }
+.icon-btn:hover { border-color: var(--blue); color: var(--blue); }
+.hero { padding: 48px 0 24px; background: radial-gradient(circle at 80% 20%, #eef2ff 0%, transparent 40%); }
+h1 { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -1.5px; margin: 12px 0 12px; font-weight: 900; }
+h1 em { font-style: normal; background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { color: var(--muted); font-size: 15px; max-width: 640px; margin-bottom: 16px; }
+.content-section { padding: 16px 0 48px; }
+.doc-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; }
+.doc-card h2 { font-size: 20px; font-weight: 800; margin: 24px 0 10px; color: var(--ink); }
+.doc-card h2:first-child { margin-top: 0; }
+.doc-card p, .doc-card li { font-size: 15px; line-height: 1.75; color: #475569; }
+.doc-card ul { padding-left: 20px; margin: 10px 0 16px; }
+.doc-card a { color: var(--blue); font-weight: 600; }
+footer { margin-top: 40px; background: #0f172a; color: #f8fafc; padding: 32px 0 20px; font-size: 12px; }
+footer a { color: #cbd5e1; }
+footer a:hover { color: #ffffff; }
+@media (max-width: 768px) {
+  nav { gap: 12px; font-size: 13px; }
+  .doc-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><span class="logo">▤</span><span>Quick PDF <span class="accent">Tools</span></span></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/jpg-to-pdf">JPG to PDF</a>
+      <a href="/pdf-to-jpg">PDF to JPG</a>
+      <a href="/merge-pdf">Merge PDF</a>
+      <a href="/compress-pdf">Compress PDF</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+    <div class="actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">☾</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>About <em>Quick PDF Tools</em></h1>
+      <p>Fast, free, and private image and document conversion tools that run right in your browser.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="wrap">
+      <div class="doc-card">
+        <h2>Our Purpose</h2>
+        <p>Quick PDF Tools was built to make everyday image and PDF tasks simple without requiring software installation, account sign-ups, or uploading sensitive documents to remote servers.</p>
+
+        <h2>Who It Is For</h2>
+        <p>Whether you are a student combining lecture slides, a job seeker turning scanned certificates into a single PDF, or an office worker extracting pages from a report, our tools are designed to work quickly on both desktop and mobile browsers.</p>
+
+        <h2>How the Tools Work</h2>
+        <p>All active tools—including <a href="/jpg-to-pdf">JPG to PDF</a>, <a href="/pdf-to-jpg">PDF to JPG</a>, <a href="/merge-pdf">Merge PDF</a>, <a href="/compress-pdf">Compress PDF</a>, and <a href="/split-pdf">Split PDF</a>—run locally on your device using modern browser APIs. Your files stay on your computer or phone from start to finish.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+    <span>© 2026 Quick PDF Tools. All rights reserved.</span>
+    <div style="display:flex; gap:20px; flex-wrap:wrap;">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/sitemap.xml" target="_blank">Sitemap</a>
+    </div>
+  </div>
+</footer>
+<script src="/app.js"></script>
+</body>
+</html>
